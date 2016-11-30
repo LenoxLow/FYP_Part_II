@@ -1,0 +1,9 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Research Paper Reading}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{X Mean}{3}{0}{1}
+\beamer@sectionintoc {2}{FYP Steps}{7}{0}{2}
+\beamer@subsectionintoc {2}{1}{FYP Step I}{7}{0}{2}
+\beamer@subsectionintoc {2}{2}{FYP Step II}{9}{0}{2}
+\beamer@subsectionintoc {2}{3}{FYP Step III}{10}{0}{2}
+\beamer@subsectionintoc {2}{4}{FYP Step IV}{11}{0}{2}
+\beamer@subsectionintoc {2}{5}{FYP Step V}{12}{0}{2}
