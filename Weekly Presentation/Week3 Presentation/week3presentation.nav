@@ -33,8 +33,12 @@
 \headcommand {\slideentry {2}{4}{1}{11/11}{FYP Step IV}{0}}
 \headcommand {\beamer@framepages {11}{11}}
 \headcommand {\beamer@subsectionentry {0}{2}{5}{12}{FYP Step V}}\headcommand {\beamer@subsectionpages {11}{11}}
-\headcommand {\beamer@partpages {1}{12}}
-\headcommand {\beamer@subsectionpages {12}{12}}
-\headcommand {\beamer@sectionpages {7}{12}}
-\headcommand {\beamer@documentpages {12}}
-\headcommand {\def \inserttotalframenumber {11}}
+\headcommand {\slideentry {2}{5}{1}{12/12}{FYP Step V}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\slideentry {2}{5}{2}{13/13}{FYP Step V}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\beamer@partpages {1}{13}}
+\headcommand {\beamer@subsectionpages {12}{13}}
+\headcommand {\beamer@sectionpages {7}{13}}
+\headcommand {\beamer@documentpages {13}}
+\headcommand {\def \inserttotalframenumber {13}}
