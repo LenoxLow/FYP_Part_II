@@ -7,8 +7,8 @@ from pandas import set_option
 set_option("display.max.rows", 20)
 
 # Data pre-set
-name = 'CFN'
-h = 25
+name = 'KKG'
+h = 20
 t = 5
 
 # read from vehicle telemetric data set

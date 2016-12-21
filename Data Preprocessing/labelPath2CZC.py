@@ -7,9 +7,9 @@ from pandas import set_option
 set_option("display.max.rows", 20)
 
 # Data pre-set
-name = 'CZC'
-h = 0
-t = 70
+name = 'KKG'
+h = 20
+t = 5
 
 # read from vehicle telemetric data set
 pathname = '/Users/jiaminglow/Desktop/FYP Part II/Unprocessed Path I Files/torqueTrackLog' + name + '2.csv'

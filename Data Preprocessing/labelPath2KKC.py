@@ -7,9 +7,9 @@ from pandas import set_option
 set_option("display.max.rows", 20)
 
 # Data pre-set
-name = 'GCW'
-h = 10
-t = 10
+name = 'KKG'
+h = 20
+t = 5
 
 # read from vehicle telemetric data set
 pathname = '/Users/jiaminglow/Desktop/FYP Part II/Unprocessed Path I Files/torqueTrackLog' + name + '2.csv'
@@ -30,7 +30,7 @@ for j in range(0, h):
 
 # delete the last t rows from data set
 for k in range(0, t):
-   vtele.drop(vtele.tail(1).index, axis=0, inplace=True)
+   vtele.drop(vtele.head(1).index, axis=0, inplace=True)
    vtele.reset_index(drop=True)
 
 # add Road Structure column to Data Frame
@@ -41,28 +41,28 @@ vtele['Road Structure'] = "empty"
 
 # add values to Road Structure column
 for index, tele in vtele.iterrows():
-    if (tele[' Longitude'] >= 103.3268 and tele[' Latitude'] >= 2.0327 and tele[' Longitude'] <= 103.3275 and
-                tele[' Latitude'] <= 2.0332):
+    if (tele[' Longitude'] >= 103.3262 and tele[' Latitude'] >= 2.03289 and tele[' Longitude'] <= 103.3276 and
+                tele[' Latitude'] <= 2.0333):
        print(index)
        vtele.set_value(index, 'Road Structure', 'Roundabout')
-    elif (tele[' Longitude'] >= 103.3216 and tele[' Latitude'] >= 2.0308 and tele[' Longitude'] <= 103.3220 and
+    elif (tele[' Longitude'] >= 103.3216 and tele[' Latitude'] >= 2.0309 and tele[' Longitude'] <= 103.32191 and
                 tele[' Latitude'] <= 2.0312):
         print(index)
         vtele.set_value(index, 'Road Structure', 'Corner')
-    elif (tele[' Longitude'] >= 103.3218 and tele[' Latitude'] >= 2.0304 and tele[' Longitude'] <= 103.32214 and
-                tele[' Latitude'] <= 2.0306):
+    elif (tele[' Longitude'] >= 103.3217 and tele[' Latitude'] >= 2.0304 and tele[' Longitude'] <= 103.3220 and
+                tele[' Latitude'] <= 2.0307):
         print(index)
         vtele.set_value(index, 'Road Structure', 'Intersection')
-    elif(tele[' Longitude'] >= 103.3234 and tele[' Latitude'] >= 2.0309 and tele[' Longitude'] <= 103.3238 and
-                tele[' Latitude'] <= 2.0312):
+    elif(tele[' Longitude'] >= 103.32319 and tele[' Latitude'] >= 2.03082 and tele[' Longitude'] <= 103.3239 and
+                tele[' Latitude'] <= 2.03108):
         print(index)
         vtele.set_value(index, 'Road Structure', 'Intersection')
-    elif (tele[' Longitude'] >= 103.3239 and tele[' Latitude'] >= 2.0298 and tele[' Longitude'] <= 103.3250 and
-                  tele[' Latitude'] <= 2.0305):
+    elif (tele[' Longitude'] >= 103.32415 and tele[' Latitude'] >= 2.0299 and tele[' Longitude'] <= 103.32534 and
+                  tele[' Latitude'] <= 2.03033):
         print(index)
         vtele.set_value(index, 'Road Structure', 'Curve Road')
-    elif(tele[' Longitude'] >= 103.3266 and tele[' Latitude'] >= 2.0298 and tele[' Longitude'] <= 103.3269 and
-                tele[' Latitude'] <= 2.0301 and index > 100):
+    elif(tele[' Longitude'] >= 103.32663 and tele[' Latitude'] >= 2.0298 and tele[' Longitude'] <= 103.32701 and
+                tele[' Latitude'] <= 2.03019 and index > 100):
         print(index)
         vtele.set_value(index, 'Road Structure', 'Intersection')
     else:

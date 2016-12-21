@@ -6,8 +6,10 @@ from pandas import set_option
 
 set_option("display.max.rows", 20)
 
+name = 'GCW'
+
 # read from vehicle telemetric data set
-vtele = pd.read_csv('/Users/jiaminglow/Desktop/FYP Part II/Unprocessed Path I Files/torqueTrackLogCZC1.csv')
+vtele = pd.read_csv('/Users/jiaminglow/Desktop/FYP Part II/Unprocessed Path I Files/torqueTrackLogGCW1.csv')
 
 # delete the extra columns in the data set
 if len(vtele.columns) > 18:
@@ -24,10 +26,10 @@ for j in range(0, h):
    vtele.reset_index(drop=True)
 
 # delete the last t rows from data set
-# t = 0
-# for k in range(0, t):
-#    vtele.drop(vtele.head(1).index, axis=0, inplace=True)
-#    vtele.reset_index(drop=True)
+t = 5
+for k in range(0, t):
+   vtele.drop(vtele.tail(1).index, axis=0, inplace=True)
+   vtele.reset_index(drop=True)
 
 # add Road Structure column to Data Frame
 vtele['Road Structure'] = "empty"
@@ -37,8 +39,8 @@ print(vtele['Road Structure'].dtype)
 
 # add values to Road Structure column
 for index, tele in vtele.iterrows():
-    if (tele[' Longitude'] <= 103.32459 and tele[' Longitude'] >= 103.3244 and
-        tele[' Latitude'] <= 2.02621 and tele[' Latitude'] >= 2.0259):
+    if (tele[' Longitude'] >= 103.3244 and tele[' Latitude'] >= 2.0259 and tele[' Longitude'] <= 103.3247 and
+                tele[' Latitude'] <= 2.0264):
        print(index)
        vtele.set_value(index, 'Road Structure', 'Corner')
     elif (tele[' Longitude'] <= 103.32516 and tele[' Longitude'] >= 103.3245 and tele[' Latitude'] <= 2.02571 and
@@ -71,4 +73,4 @@ for index, tele in vtele.iterrows():
 
 #print(vtele.sort_values(['Road Structure']))
 
-vtele.to_csv("/Users/jiaminglow/Desktop/FYP Part II/Process Step I/CZCPath1.csv", sep='\t', encoding='utf-8')
+vtele.to_csv("/Users/jiaminglow/Desktop/FYP Part II/Process Step I/GCWPath1.csv", sep='\t', encoding='utf-8')

@@ -7,7 +7,7 @@ from pandas import set_option
 set_option("display.max.rows", 20)
 
 # Data pre-set
-name = 'CFN'
+name = 'GCW'
 h = 5
 t = 0
 
@@ -42,15 +42,15 @@ vtele['Road Structure'] = "empty"
 # add values to Road Structure column
 for index, tele in vtele.iterrows():
     if (tele[' Longitude'] >= 103.3219 and tele[' Latitude'] >= 2.0303 and tele[' Longitude'] <= 103.3224 and
-                tele[' Latitude'] <= 2.0307):
+                tele[' Latitude'] <= 2.03055):
        print(index)
        vtele.set_value(index, 'Road Structure', 'Intersection')
     elif (tele[' Longitude'] >= 103.3214 and tele[' Latitude'] >= 2.0307 and tele[' Longitude'] <= 103.3221 and
                 tele[' Latitude'] <= 2.0312 and index < 100):
         print(index)
         vtele.set_value(index, 'Road Structure', 'Intersection')
-    elif (tele[' Longitude'] >= 103.3199 and tele[' Latitude'] >= 2.0303 and tele[' Longitude'] <= 103.3205 and
-                tele[' Latitude'] <= 2.0308 ):
+    elif (tele[' Longitude'] >= 103.3195 and tele[' Latitude'] >= 2.0303 and tele[' Longitude'] <= 103.3205 and
+                tele[' Latitude'] <= 2.03068 ):
         print(index)
         vtele.set_value(index, 'Road Structure', 'Intersection')
     elif (tele[' Longitude'] >= 103.3206 and tele[' Latitude'] >= 2.0305 and tele[' Longitude'] <= 103.321 and
@@ -74,7 +74,7 @@ for index, tele in vtele.iterrows():
         print(index)
         vtele.set_value(index, 'Road Structure', 'Roundabout')
     elif (tele[' Longitude'] >= 103.3233 and tele[' Latitude'] >= 2.0314 and tele[' Longitude'] <= 103.3236 and
-              tele[' Latitude'] <= 2.0319 and index > 600):
+              tele[' Latitude'] <= 2.0319 and index > 300):
         print("Corner")
         print(index)
         vtele.set_value(index, 'Road Structure', 'Corner')

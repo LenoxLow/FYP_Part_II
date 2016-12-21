@@ -6,10 +6,10 @@ from pandas import set_option
 set_option("display.max.rows", 20)
 
 # Data pre-set
-name = "OYC"
+name = "GCW"
 h1 = 0
-h3 = 5
-fullname = "Ooi Yong Cheng"
+h3 = 0
+fullname = "Goh Chun Wooi"
 
 # read from vehicle telemetric data set
 pathname1 = "/Users/jiaminglow/Desktop/FYP Part II/Process Step I/" + name + "Path1.csv"

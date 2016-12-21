@@ -4,10 +4,10 @@ from pandas import set_option
 set_option("display.max.rows", 20)
 
 # Data pre-set
-name = "KMH"
+name = "GCW"
 be1 = "Good"
 be2 = "Good"
-be3 = "Bad"
+be3 = "Good"
 
 # read from vehicle telemetric data set
 pathname1 = "/Users/jiaminglow/Desktop/FYP Part II/Process Step II/" + name + "Path1.csv"
