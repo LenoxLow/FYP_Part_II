@@ -16,6 +16,9 @@ pathname1 = "/Users/jiaminglow/Desktop/FYP Part II/Process Step III/" + name + "
 vtele = pd.read_csv(pathname1, sep='\t')
 
 vtele['Overspeeding'] = 0
+vtele['Overspeeding'] = vtele['Overspeeding'].apply(pd.to_numeric)
+
+print(vtele['Overspeeding'].dtype)
 
 for index, tele in vtele.iterrows():
 
@@ -31,9 +34,11 @@ for index, tele in vtele.iterrows():
         road = 35
 
     if (tele['Speed (GPS)(km/h)'] > road):
-        tele['Overspeeding'] = 1
+        vtele.iloc[index, vtele.columns.get_loc('Overspeeding')] = 1
+        # vtele.set_value(index, 'Overspeeding', 1)
     else:
-        tele['Overspeeding'] = 0
+        vtele.iloc[index, vtele.columns.get_loc('Overspeeding')] = 0
+        # vtele.set_value(index, 'Overspeeding', 0)
 
 output = "/Users/jiaminglow/Desktop/FYP Part II/Process Step IV/" + name + "Path1.csv"
 vtele.to_csv(output, sep='\t', encoding='utf-8')
@@ -46,6 +51,7 @@ pathname2 = "/Users/jiaminglow/Desktop/FYP Part II/Process Step III/" + name + "
 vtele2 = pd.read_csv(pathname2, sep='\t')
 
 vtele2['Overspeeding'] = 0
+vtele2['Overspeeding'] = vtele2['Overspeeding'].apply(pd.to_numeric)
 
 for index2, tele2 in vtele2.iterrows():
 
@@ -61,9 +67,9 @@ for index2, tele2 in vtele2.iterrows():
         road = 35
 
     if (tele2['Speed (GPS)(km/h)'] > road):
-        tele2['Overspeeding'] = 1
+        vtele2.iloc[index2, vtele2.columns.get_loc('Overspeeding')] = 1
     else:
-        tele2['Overspeeding'] = 0
+        vtele2.iloc[index2, vtele2.columns.get_loc('Overspeeding')] = 0
 
 output2 = "/Users/jiaminglow/Desktop/FYP Part II/Process Step IV/" + name + "Path2.csv"
 vtele2.to_csv(output2, sep='\t', encoding='utf-8')
@@ -77,6 +83,7 @@ pathname3 = "/Users/jiaminglow/Desktop/FYP Part II/Process Step III/" + name + "
 vtele3 = pd.read_csv(pathname3, sep='\t')
 
 vtele3['Overspeeding'] = 0
+vtele3['Overspeeding'] = vtele3['Overspeeding'].apply(pd.to_numeric)
 
 for index3, tele3 in vtele3.iterrows():
 
@@ -93,9 +100,11 @@ for index3, tele3 in vtele3.iterrows():
 
 
     if (tele3['Speed (GPS)(km/h)'] > road):
-        tele3['Overspeeding'] = 1
+        vtele3.iloc[index3, vtele3.columns.get_loc('Overspeeding')] = 1
     else:
-        tele3['Overspeeding'] = 0
+        vtele3.iloc[index3, vtele3.columns.get_loc('Overspeeding')] = 0
 
 output3 = "/Users/jiaminglow/Desktop/FYP Part II/Process Step IV/" + name + "Path3.csv"
 vtele3.to_csv(output3, sep='\t', encoding='utf-8')
+
+print(name)
