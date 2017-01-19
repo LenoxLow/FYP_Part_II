@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.2" xmlns="http://www.dmg.org/PMML-4_2">
+  <Header copyright="jiaminglow">
+    <Application name="KNIME" version="3.2.0"/>
+  </Header>
+  <DataDictionary numberOfFields="10">
+    <DataField name="Altitude" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="5.7" rightMargin="100.1"/>
+    </DataField>
+    <DataField name="Bearing" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="359.94"/>
+    </DataField>
+    <DataField name="Speed (GPS)(km/h)" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="76.1638565063"/>
+    </DataField>
+    <DataField name="Acceleration Sensor(Total)(g)" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="-0.652485728264" rightMargin="0.47379130125"/>
+    </DataField>
+    <DataField name="Engine RPM(rpm)" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="519.75" rightMargin="3282.75"/>
+    </DataField>
+    <DataField name="Engine Load(%)" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="6.66666698456" rightMargin="97.647064209"/>
+    </DataField>
+    <DataField name="Throttle Position(Manifold)(%)" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="9.41176509857" rightMargin="44.3137245178"/>
+    </DataField>
+    <DataField name="Engine Coolant Temperature(°C)" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="82.0" rightMargin="100.0"/>
+    </DataField>
+    <DataField name="Behaviour" optype="categorical" dataType="string">
+      <Value value="Good"/>
+      <Value value="Bad"/>
+      <Value value="Normal"/>
+    </DataField>
+    <DataField name="Overspeeding" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+  </DataDictionary>
+  <NaiveBayesModel isScorable="true" modelName="KNIME PMML Naive Bayes model" threshold="0.0" functionName="classification">
+    <MiningSchema>
+      <MiningField name="Altitude" invalidValueTreatment="asIs"/>
+      <MiningField name="Bearing" invalidValueTreatment="asIs"/>
+      <MiningField name="Speed (GPS)(km/h)" invalidValueTreatment="asIs"/>
+      <MiningField name="Acceleration Sensor(Total)(g)" invalidValueTreatment="asIs"/>
+      <MiningField name="Engine RPM(rpm)" invalidValueTreatment="asIs"/>
+      <MiningField name="Engine Load(%)" invalidValueTreatment="asIs"/>
+      <MiningField name="Throttle Position(Manifold)(%)" invalidValueTreatment="asIs"/>
+      <MiningField name="Engine Coolant Temperature(°C)" invalidValueTreatment="asIs"/>
+      <MiningField name="Overspeeding" invalidValueTreatment="asIs"/>
+      <MiningField name="Behaviour" invalidValueTreatment="asIs" usageType="target"/>
+    </MiningSchema>
+    <BayesInputs>
+      <BayesInput fieldName="Altitude">
+        <Extension name="numberOfMissingValues" value="0"/>
+        <TargetValueStats>
+          <TargetValueStat value="Bad">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="1650"/>
+            <GaussianDistribution mean="47.79521212121204" variance="230.20612017935863"/>
+          </TargetValueStat>
+          <TargetValueStat value="Good">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="4464"/>
+            <GaussianDistribution mean="41.88958333333318" variance="178.65462819292583"/>
+          </TargetValueStat>
+          <TargetValueStat value="Normal">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="797"/>
+            <GaussianDistribution mean="35.38293601003773" variance="92.62176875594652"/>
+          </TargetValueStat>
+        </TargetValueStats>
+      </BayesInput>
+      <BayesInput fieldName="Bearing">
+        <Extension name="numberOfMissingValues" value="0"/>
+        <TargetValueStats>
+          <TargetValueStat value="Bad">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="1650"/>
+            <GaussianDistribution mean="161.2306000000002" variance="11998.70352195646"/>
+          </TargetValueStat>
+          <TargetValueStat value="Good">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="4464"/>
+            <GaussianDistribution mean="183.75078853046458" variance="9474.00782635575"/>
+          </TargetValueStat>
+          <TargetValueStat value="Normal">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="797"/>
+            <GaussianDistribution mean="190.18644918444105" variance="8820.52341262724"/>
+          </TargetValueStat>
+        </TargetValueStats>
+      </BayesInput>
+      <BayesInput fieldName="Speed (GPS)(km/h)">
+        <Extension name="numberOfMissingValues" value="0"/>
+        <TargetValueStats>
+          <TargetValueStat value="Bad">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="1650"/>
+            <GaussianDistribution mean="21.041135516591623" variance="409.92646916938287"/>
+          </TargetValueStat>
+          <TargetValueStat value="Good">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="4464"/>
+            <GaussianDistribution mean="24.648796135396143" variance="356.9668464671606"/>
+          </TargetValueStat>
+          <TargetValueStat value="Normal">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="797"/>
+            <GaussianDistribution mean="25.413757127379967" variance="265.21101320263057"/>
+          </TargetValueStat>
+        </TargetValueStats>
+      </BayesInput>
+      <BayesInput fieldName="Acceleration Sensor(Total)(g)">
+        <Extension name="numberOfMissingValues" value="0"/>
+        <TargetValueStats>
+          <TargetValueStat value="Bad">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="1650"/>
+            <GaussianDistribution mean="0.01931153339912301" variance="0.002367233554566482"/>
+          </TargetValueStat>
+          <TargetValueStat value="Good">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="4464"/>
+            <GaussianDistribution mean="0.04035743772038041" variance="0.0025627249394197973"/>
+          </TargetValueStat>
+          <TargetValueStat value="Normal">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="797"/>
+            <GaussianDistribution mean="0.03151888587866238" variance="0.0012355719913830982"/>
+          </TargetValueStat>
+        </TargetValueStats>
+      </BayesInput>
+      <BayesInput fieldName="Engine RPM(rpm)">
+        <Extension name="numberOfMissingValues" value="0"/>
+        <TargetValueStats>
+          <TargetValueStat value="Bad">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="1650"/>
+            <GaussianDistribution mean="1182.820303030303" variance="234875.4953577008"/>
+          </TargetValueStat>
+          <TargetValueStat value="Good">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="4464"/>
+            <GaussianDistribution mean="1279.5921818996417" variance="276063.39803767606"/>
+          </TargetValueStat>
+          <TargetValueStat value="Normal">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="797"/>
+            <GaussianDistribution mean="1189.957026348808" variance="157693.22985634735"/>
+          </TargetValueStat>
+        </TargetValueStats>
+      </BayesInput>
+      <BayesInput fieldName="Engine Load(%)">
+        <Extension name="numberOfMissingValues" value="0"/>
+        <TargetValueStats>
+          <TargetValueStat value="Bad">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="1650"/>
+            <GaussianDistribution mean="29.780867965006095" variance="226.9763177649863"/>
+          </TargetValueStat>
+          <TargetValueStat value="Good">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="4464"/>
+            <GaussianDistribution mean="36.08010103561605" variance="336.05866111456936"/>
+          </TargetValueStat>
+          <TargetValueStat value="Normal">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="797"/>
+            <GaussianDistribution mean="28.85575851383254" variance="183.68696619436554"/>
+          </TargetValueStat>
+        </TargetValueStats>
+      </BayesInput>
+      <BayesInput fieldName="Throttle Position(Manifold)(%)">
+        <Extension name="numberOfMissingValues" value="0"/>
+        <TargetValueStats>
+          <TargetValueStat value="Bad">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="1650"/>
+            <GaussianDistribution mean="12.530719202792545" variance="23.346472358201765"/>
+          </TargetValueStat>
+          <TargetValueStat value="Good">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="4464"/>
+            <GaussianDistribution mean="15.168757804402677" variance="40.01807589666702"/>
+          </TargetValueStat>
+          <TargetValueStat value="Normal">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="797"/>
+            <GaussianDistribution mean="13.14537380390807" variance="19.975871789374416"/>
+          </TargetValueStat>
+        </TargetValueStats>
+      </BayesInput>
+      <BayesInput fieldName="Engine Coolant Temperature(°C)">
+        <Extension name="numberOfMissingValues" value="0"/>
+        <TargetValueStats>
+          <TargetValueStat value="Bad">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="1650"/>
+            <GaussianDistribution mean="91.14666666666666" variance="8.594606832423223"/>
+          </TargetValueStat>
+          <TargetValueStat value="Good">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="4464"/>
+            <GaussianDistribution mean="89.15636200716845" variance="14.311642240419893"/>
+          </TargetValueStat>
+          <TargetValueStat value="Normal">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="797"/>
+            <GaussianDistribution mean="91.08281053952321" variance="12.151425256772932"/>
+          </TargetValueStat>
+        </TargetValueStats>
+      </BayesInput>
+      <BayesInput fieldName="Overspeeding">
+        <Extension name="numberOfMissingValues" value="0"/>
+        <TargetValueStats>
+          <TargetValueStat value="Bad">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="1650"/>
+            <GaussianDistribution mean="0.062424242424242424" variance="0.058562949078412994"/>
+          </TargetValueStat>
+          <TargetValueStat value="Good">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="4464"/>
+            <GaussianDistribution mean="0.059587813620071685" variance="0.05604966201592223"/>
+          </TargetValueStat>
+          <TargetValueStat value="Normal">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="797"/>
+            <GaussianDistribution mean="0.030112923462986198" variance="0.029242826428251673"/>
+          </TargetValueStat>
+        </TargetValueStats>
+      </BayesInput>
+    </BayesInputs>
+    <BayesOutput fieldName="Behaviour">
+      <Extension name="numberOfMissingValues" value="0"/>
+      <TargetValueCounts>
+        <TargetValueCount value="Good" count="4464.0"/>
+        <TargetValueCount value="Bad" count="1650.0"/>
+        <TargetValueCount value="Normal" count="797.0"/>
+      </TargetValueCounts>
+    </BayesOutput>
+  </NaiveBayesModel>
+</PMML>
